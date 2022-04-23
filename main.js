@@ -464,12 +464,12 @@ const main = async (access_token) => {
 	})
 	const FTPClient = new FTP({
 		config: {
-			host: "192.168.1.70",
-			port: 2221,
-			user: "kiwihour",
+			host: "", // <----
+			port: 2221, // <----
+			user: "", // <----
 		},
-		dir: "mp3",
-		root_dir: "mp3"
+		dir: "", // <----
+		root_dir: "" // <----
 	})
 
 	await SpotifyClient.connect()
@@ -481,7 +481,7 @@ const main = async (access_token) => {
 
 	// await FTPClient.controller.put(__dirname + "\\Songs\\audio-out.mp3", `mp3/Spotify/Scrumptious Songs/audio-out.mp3`)
 
-	const playlists_data = (await SpotifyClient.controller.getUserPlaylists("31qh2b2xpganidhnxi7njdjlxaja")).body.items
+	const playlists_data = (await SpotifyClient.controller.getUserPlaylists("")).body.items  // <----
 
 	// const track = await SpotifyClient.getTrack("1BApHcP5TM5DHAq4gyjqjx")
 	// console.log(track.album.id)
@@ -517,8 +517,8 @@ const main = async (access_token) => {
 }
 
 const redirect_uri = "http://localhost:4050/spotify-callback"
-const client_id = "b38bf057547a4d76837776d4f2a1b333"
-const client_secret = "e2622180d3494c958336a602b299cd69"
+const client_id = "" // <----
+const client_secret = "" // <----
 const scope = "playlist-modify-public playlist-modify-private playlist-read-private"
 const state = "bcee1f067bb872b2"
 
